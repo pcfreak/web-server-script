@@ -117,24 +117,24 @@ echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=�
 echo -ne " OPCION: "; read lang
 case $lang in
 1)
-wget -O /etc/adm-lite "https://raw.githubusercontent.com/xiihaiqal/myscript/main/IDIOMA_VPS/pt/idioma
+wget -O /etc/adm-lite "https://raw.githubusercontent.com/xiihaiqal/myscript/main/IDIOMA_VPS/pt/idioma"
 ;;
 2)
-wget -O /etc/adm-lite "https://raw.githubusercontent.com/xiihaiqal/myscript/main/IDIOMA_VPS/en/idioma
+wget -O /etc/adm-lite "https://raw.githubusercontent.com/xiihaiqal/myscript/main/IDIOMA_VPS/en/idioma"
 ;;
 3)
-wget -O /etc/adm-lite "https://raw.githubusercontent.com/xiihaiqal/myscript/main/IDIOMA_VPS/es/idioma
+wget -O /etc/adm-lite "https://raw.githubusercontent.com/xiihaiqal/myscript/main/IDIOMA_VPS/es/idioma"
 ;;
 4)
-wget -O /etc/adm-lite "https://raw.githubusercontent.com/xiihaiqal/myscript/main/IDIOMA_VPS/fr/idioma
+wget -O /etc/adm-lite "https://raw.githubusercontent.com/xiihaiqal/myscript/main/IDIOMA_VPS/fr/idioma"
 ;;
 *)
-wget -O /etc/adm-lite "https://raw.githubusercontent.com/xiihaiqal/myscript/main/IDIOMA_VPS/es/idioma
+wget -O /etc/adm-lite "https://raw.githubusercontent.com/xiihaiqal/myscript/main/IDIOMA_VPS/es/idioma"
 ;;
 esac
 echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠"
 echo -e ""
-echo -e "${cor[2]}  "")\n\033[1;37m  Script Modified by: KingKongVPN."
+echo -e "${cor[2]}  \n\033[1;37m  Script Modified by: KingKongVPN."
 echo -e ""
 echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠"
 echo -e "${cor[5]}  "ADM-SCRIPTS INSTALLER") ®"
