@@ -34,7 +34,7 @@ cd /etc/adm-lite && bash cabecalho --instalar
 }
 
 elimined_fun () {
-text= "Instalando")9
+text= "Instalando"
 echo -e "${cor[2]} Update"
 fun_bar 'apt-get install screen' 'apt-get install python'
 echo -e "${cor[2]} Upgrade"
