@@ -85,7 +85,7 @@ fun_squid  () {
   service squid3 restart > /dev/null 2>&1
   service squid restart > /dev/null 2>&1
   [[ -e $var_squid ]] && {
-  echo -e "$barra\n\033[1;32m $(source trans -b es:${id} "REMOVIENDO SQUID")\n$barra"
+  echo -e "$barra\n\033[1;32m $(source trans -b es:en "REMOVIENDO SQUID")\n$barra"
   fun_bar "apt-get remove squid3 -y"
   service squid stop > /dev/null 2>&1
   service squid3 stop > /dev/null 2>&1
@@ -128,17 +128,17 @@ payload="/etc/payloads"
 echo -e "" > /etc/payloads
 echo -e " ${txt[219]}"
 echo -e " ${txt[220]}" 
-read -p " $(source trans -b es:${id} "Agregar Host"): " hos
+read -p " $(source trans -b es:en "Agregar Host"): " hos
 if [[ $hos != \.* ]]; then
 echo -e "$barra"
-echo -e "\033[1;31m $(source trans -b es:${id} " [!] Host-Squid debe iniciar con "."")\033[0m"
-echo -e "\033[1;31m $(source trans -b es:${id} " Asegurese de agregarlo despues corretamente!")\033[0m"
+echo -e "\033[1;31m $(source trans -b es:en " [!] Host-Squid debe iniciar con "."")\033[0m"
+echo -e "\033[1;31m $(source trans -b es:en " Asegurese de agregarlo despues corretamente!")\033[0m"
 fi
 host="$hos/"
 if [[ -z $host ]]; then
 echo -e "$barra"
-echo -e "\033[1;31m $(source trans -b es:${id} " [!] Host-Squid no agregado")"
-echo -e "\033[1;31m $(source trans -b es:${id} " Asegurese de agregarlo despues!")\033[0m"
+echo -e "\033[1;31m $(source trans -b es:en " [!] Host-Squid no agregado")"
+echo -e "\033[1;31m $(source trans -b es:en " Asegurese de agregarlo despues!")\033[0m"
 fi
 echo "$host" >> $payload && grep -v "^$" $payload > /tmp/a && mv /tmp/a $payload
 echo -e "$barra\n\033[1;32m $(source trans -b pt:en "Agora Escolha Uma Conf Para Seu Proxy")\n$barra"
@@ -277,7 +277,7 @@ done
 
 fun_dropbear () {
  [[ -e /etc/default/dropbear ]] && {
- echo -e "$barra\n\033[1;32m $(source trans -b es:${id} "REMOVIENDO DROPBEAR")\n$barra"
+ echo -e "$barra\n\033[1;32m $(source trans -b es:en "REMOVIENDO DROPBEAR")\n$barra"
  fun_bar "apt-get remove dropbear -y"
  echo -e "$barra\n\033[1;32m $(source trans -b pt:en "Dropbear Removido")\n$barra"
  [[ -e /etc/default/dropbear ]] && rm /etc/default/dropbear
@@ -285,11 +285,11 @@ fun_dropbear () {
  return 0
  }
 echo -e "$barra\n\033[1;32m $(source trans -b pt:en "INSTALADOR DROPBEAR ADM-ULTIMATE")\n$barra"
-echo -e " $(source trans -b es:${id} "DROPBEAR USA EL PUERTO 443")\033[1;37m"
+echo -e " $(source trans -b es:en "DROPBEAR USA EL PUERTO 443")\033[1;37m"
 echo -e "$barra"
    [[ $(mportas|grep 443) != "" ]] && {
    echo -e "\033[1;31m $(source trans -b pt:en "PORTA 443 EM USO")\033[1;37m"
-   echo -e "\033[1;31m $(source trans -b es:${id} "INTENTE NUEVAMENTE")\033[1;37m"
+   echo -e "\033[1;31m $(source trans -b es:en "INTENTE NUEVAMENTE")\033[1;37m"
    fuser -k 443/tcp > /dev/null 2>&1
    echo -e "$barra"
    return 1
@@ -452,10 +452,10 @@ coleta_variaveis () {
 	# If $IP is a private IP address, the server must be behind NAT
 	if echo "$IP" | grep -qE '^(10\.|172\.1[6789]\.|172\.2[0-9]\.|172\.3[01]\.|192\.168)'; then
 		echo
-		echo " \033[1;33m$(source trans -b en:${id} This server is behind NAT. What is the public IPv4 address or hostname?)"
+		echo " \033[1;33m$(source trans -b en:en This server is behind NAT. What is the public IPv4 address or hostname?)"
 		read -p " Public IP address / hostname: " -e PUBLICIP
 	fi
-	echo -e "$barra\n \033[1;31m$(source trans -b es:${id} "Elegir el tipo de protocolo para") OPENVPN"
+	echo -e "$barra\n \033[1;31m$(source trans -b es:en "Elegir el tipo de protocolo para") OPENVPN"
 	echo -e " \033[1;31m$(source trans -b pt:en "A menos que o UDP esteja bloqueado, você não deve usar o TCP (mais lento)")\n$barra"
 	#PROTOCOLO
 	while [[ $PROTOCOL != @(UDP|TCP) ]]; do
@@ -480,7 +480,7 @@ coleta_variaveis () {
 	read -p " DNS [1-9]: " -e -i 1 DNS
 	done
 	#CIPHER
-	echo -e "$barra\n \033[1;33m$(source trans -b es:${id} "Elegir el tipo de codificacion para el canal de datos:")\n$barra"
+	echo -e "$barra\n \033[1;33m$(source trans -b es:en "Elegir el tipo de codificacion para el canal de datos:")\n$barra"
 	echo "   1) AES-128-CBC"
 	echo "   2) AES-192-CBC"
 	echo "   3) AES-256-CBC"
@@ -619,10 +619,10 @@ openssl req -new -key /etc/openvpn/client-key.pem -out /etc/openvpn/client-csr.p
 openssl x509 -req -in /etc/openvpn/client-csr.pem -out /etc/openvpn/client-cert.pem -CA /etc/openvpn/ca.pem -CAkey /etc/openvpn/ca-key.pem -days 36525 > /dev/null 2>&1
 ) && echo -e "\033[1;32m [OK]"
 teste_porta () {
-  echo -ne " \033[1;31m$(source trans -b es:${id} "Verificando: ")"
+  echo -ne " \033[1;31m$(source trans -b es:en "Verificando: ")"
   sleep 1s
   [[ ! $(mportas | grep $1) ]] && {
-    echo -e " \033[1;33m$(source trans -b es:${id} "Abriendo un Puerto en Python")"
+    echo -e " \033[1;33m$(source trans -b es:en "Abriendo un Puerto en Python")"
     cd /etc/adm-lite
     [[ $(screen -h|wc -l) -lt '30' ]] && apt-get install screen -y 
     screen -dmS screen python ./openproxy.py "$1"    
@@ -631,7 +631,7 @@ teste_porta () {
     return 1
     }
    }
-echo -e "$barra\n \033[1;33m$(source trans -b es:${id} "Ahora se necesita el puerto de su Proxy Squid (Socks)")"
+echo -e "$barra\n \033[1;33m$(source trans -b es:en "Ahora se necesita el puerto de su Proxy Squid (Socks)")"
 echo -e " \033[1;33m$(source trans -b pt:en "Se nao Existir Proxy na Porta um Proxy Python sera Aberto!")\n$barra"
 while [[ $? != "1" ]]; do
 read -p " Confirme un Puerto(Proxy): " -e -i 80 PPROXY
@@ -735,10 +735,10 @@ fun_openvpn () {
 unset OPENBAR
 [[ $(ps x|grep -v grep|grep openvpn) ]] && OPENBAR="\033[1;32mOnline" || OPENBAR="\033[1;31mOffline"
 teste_porta () {
-echo -ne " \033[1;31m$(source trans -b es:${id} "Verificando: ")"
+echo -ne " \033[1;31m$(source trans -b es:en "Verificando: ")"
 sleep 1s
 [[ ! $(mportas | grep $1) ]] && {
-echo -e " \033[1;33m$(source trans -b es:${id} "Abriendo un Puerto en Python")"
+echo -e " \033[1;33m$(source trans -b es:en "Abriendo un Puerto en Python")"
 cd /etc/adm-lite
 [[ $(screen -h|wc -l) -lt '30' ]] && apt-get install screen -y 
 screen -dmS screen python ./openproxy.py "$1"    
@@ -750,7 +750,7 @@ screen -dmS screen python ./openproxy.py "$1"
 echo -e "$barra\n\033[1;33m $(source trans -b pt:en "OPENVPN ESTA INSTALADO")\n$barra"
 echo -e "\033[1;31m [ 1 ] \033[1;33m $(source trans -b pt:en "Remover Openvpn")"
 echo -e "\033[1;31m [ 2 ] \033[1;33m $(source trans -b pt:en "Editar Cliente Openvpn") \033[1;31m(comand nano)"
-echo -e "\033[1;31m [ 3 ] \033[1;33m $(source trans -b es:${id} "INICIAR o DETENER OPENVPN") $OPENBAR\n$barra"
+echo -e "\033[1;31m [ 3 ] \033[1;33m $(source trans -b es:en "INICIAR o DETENER OPENVPN") $OPENBAR\n$barra"
 echo -ne "\033[1;33m $(source trans -b pt:en "Opcao"): "
 read xption
 case $xption in 
@@ -782,7 +782,7 @@ case $xption in
 	killall openvpn > /dev/null
 	systemctl stop openvpn@server.service > /dev/null 2>&1
 	service openvpn stop > /dev/null 2>&1
-	echo -e "$barra\n\033[1;31m $(source trans -b es:${id} "OPENVPN Detenido")\n$barra"
+	echo -e "$barra\n\033[1;31m $(source trans -b es:en "OPENVPN Detenido")\n$barra"
 	} || {
 	(
 	ps x |grep openvpn |grep -v grep|awk '{print $1}' | while read pid; do kill -9 $pid; done
@@ -796,7 +796,7 @@ case $xption in
 	echo -e "${barra}"
 	read -p " Confirme a Puerto(Proxy): " -e -i 80 PPROXY
 	teste_porta $PPROXY
-	echo -e "$barra\n\033[1;32m $(source trans -b es:${id} "OPENVPN iniciado")\n$barra"
+	echo -e "$barra\n\033[1;32m $(source trans -b es:en "OPENVPN iniciado")\n$barra"
 	}
 	return 0;;
  *)
@@ -1005,7 +1005,7 @@ fun_bar "kill -9 $pids"
 done
 fi
 rm /etc/adm-lite/gettun
-echo -e "${barra}\n Gettunel $(source trans -b es:${id} "desactivado")\n${barra}"
+echo -e "${barra}\n Gettunel $(source trans -b es:en "desactivado")\n${barra}"
 return 0
 }
 echo -e "${barra}\n GETTUNEL PROXY\n${barra}"
@@ -1093,7 +1093,7 @@ echo -e "$barra"
     while true; do
     read -p " Listen-SSL: " SSLPORT
     [[ $(mportas|grep $SSLPORT) ]] || break
-    echo -e "\033[1;33m $(source trans -b es:${id} "El puerto seleccionado ya se encuentra en uso")"
+    echo -e "\033[1;33m $(source trans -b es:en "El puerto seleccionado ya se encuentra en uso")"
     unset SSLPORT
 	echo -e "$barra"
 	return 0
