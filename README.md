@@ -10,7 +10,7 @@ Manager Script
 
 2 • User Should INSTALL FRESH UBUNTO OS
 
-apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/starrising321/myscript/main/instala.sh; chmod +x instala.sh; ./instala.sh
+apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/xiihaiqal/myscript/main/instala.sh; chmod +x instala.sh; ./instala.sh
 
 ================================================================================
 
