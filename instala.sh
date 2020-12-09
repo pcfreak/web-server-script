@@ -34,7 +34,7 @@ cd /etc/adm-lite && bash cabecalho --instalar
 }
 
 elimined_fun () {
-text=$(source trans -b pt:${id} "Instalando")
+text= "Instalando")9
 echo -e "${cor[2]} Update"
 fun_bar 'apt-get install screen' 'apt-get install python'
 echo -e "${cor[2]} Upgrade"
@@ -66,7 +66,7 @@ chmod +x /bin/adm
 cd /etc/adm-lite
 touch /etc/adm-lite/index.html
 wget -i $HOME/lista -o /dev/null
-echo -e "${cor[3]} $(source trans -b pt:${id} "Dependencies Will Now Be Installed")"
+echo -e "${cor[3]}  "Dependencies Will Now Be Installed")"
 echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠"
 cd /etc/adm-lite
 chmod +x ./*
@@ -74,12 +74,12 @@ instalar_fun
 function_verify
 [[ -e $HOME/lista ]] && rm $HOME/lista
 echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠"
-echo -e "${cor[3]} $(source trans -b pt:${id} "Perfect Procedure Done Successfully!")"
+echo -e "${cor[3]}  "Perfect Procedure Done Successfully!")"
 echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠"
-echo -e "${cor[3]} |∆| ${cor[2]}$(source trans -b pt:${id} "Now You Only Configure Your VPS With The Installation Menu")"
+echo -e "${cor[3]} |∆| ${cor[2]} "Now You Only Configure Your VPS With The Installation Menu")"
 echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠"
-echo -e "${cor[2]} $(source trans -b pt:${id} "Use Commands "): menu, adm"
-echo -e "${cor[2]} $(source trans -b pt:${id} "and access the script, a good use!")"
+echo -e "${cor[2]}  "Use Commands "): menu, adm"
+echo -e "${cor[2]}  "and access the script, a good use!")"
 echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠"
 echo -ne " \033[0m"
 }
@@ -117,29 +117,29 @@ echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=�
 echo -ne " OPCION: "; read lang
 case $lang in
 1)
-id="pt"
+wget -O /etc/adm-lite "https://raw.githubusercontent.com/xiihaiqal/myscript/main/IDIOMA_VPS/pt/idioma
 ;;
 2)
-id="en"
+wget -O /etc/adm-lite "https://raw.githubusercontent.com/xiihaiqal/myscript/main/IDIOMA_VPS/en/idioma
 ;;
 3)
-id="es"
+wget -O /etc/adm-lite "https://raw.githubusercontent.com/xiihaiqal/myscript/main/IDIOMA_VPS/es/idioma
 ;;
 4)
-id="fr"
+wget -O /etc/adm-lite "https://raw.githubusercontent.com/xiihaiqal/myscript/main/IDIOMA_VPS/fr/idioma
 ;;
 *)
-id="es"
+wget -O /etc/adm-lite "https://raw.githubusercontent.com/xiihaiqal/myscript/main/IDIOMA_VPS/es/idioma
 ;;
 esac
 echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠"
 echo -e ""
-echo -e "${cor[2]} $(source trans -b pt:${id} "")\n\033[1;37m  Script Modified by: KingKongVPN."
+echo -e "${cor[2]}  "")\n\033[1;37m  Script Modified by: KingKongVPN."
 echo -e ""
 echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠"
-echo -e "${cor[5]} $(source trans -b pt:${id} "ADM-SCRIPTS INSTALLER") ®"
+echo -e "${cor[5]}  "ADM-SCRIPTS INSTALLER") ®"
 echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠"
-echo -e "${cor[3]} $(source trans -b pt:${id} "Starting Installation...")"
+echo -e "${cor[3]}  "Starting Installation...")"
 echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠"
 echo -ne "${cor[4]}"
 wget -O lista https://raw.githubusercontent.com/xiihaiqal/myscript/main/lista -o /dev/null
