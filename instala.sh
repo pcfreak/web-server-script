@@ -58,6 +58,7 @@ echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=�
 valid_fun () {
 [[ -d /etc/adm-lite ]] && rm -rf /etc/adm-lite
 mkdir /etc/adm-lite
+wget -O /etc/adm-lite/idioma "https://raw.githubusercontent.com/xiihaiqal/myscript/main/IDIOMA_VPS/$id/idioma"
 cd /etc/adm-lite
 echo "cd /etc/adm-lite && bash ./menu" > /bin/menu
 echo "cd /etc/adm-lite && bash ./menu" > /bin/adm
@@ -143,5 +144,4 @@ echo -e "${cor[3]} $(source trans -b pt:en "Iniciando Instalação...")"
 echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠"
 echo -ne "${cor[4]}"
 wget -O lista https://raw.githubusercontent.com/xiihaiqal/myscript/main/lista -o /dev/null
-wget -O /etc/adm-lite "https://raw.githubusercontent.com/xiihaiqal/myscript/main/IDIOMA_VPS/$id/idioma"
 valid_fun
