@@ -118,23 +118,18 @@ echo -ne " OPTIONS: "; read lang
 case $lang in
 1)
 id="pt"
-wget -O /etc/adm-lite "https://raw.githubusercontent.com/xiihaiqal/myscript/main/IDIOMA_VPS/pt/idioma"
 ;;
 2)
 id="en"
-wget -O /etc/adm-lite "https://raw.githubusercontent.com/xiihaiqal/myscript/main/IDIOMA_VPS/en/idioma"
 ;;
 3)
 id="es"
-wget -O /etc/adm-lite "https://raw.githubusercontent.com/xiihaiqal/myscript/main/IDIOMA_VPS/es/idioma"
 ;;
 4)
 id="fr"
-wget -O /etc/adm-lite "https://raw.githubusercontent.com/xiihaiqal/myscript/main/IDIOMA_VPS/fr/idioma"
 ;;
 *)
 id="es"
-wget -O /etc/adm-lite "https://raw.githubusercontent.com/xiihaiqal/myscript/main/IDIOMA_VPS/es/idioma"
 ;;
 esac
 echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠"
@@ -148,4 +143,5 @@ echo -e "${cor[3]} $(source trans -b pt:en "Iniciando Instalação...")"
 echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠"
 echo -ne "${cor[4]}"
 wget -O lista https://raw.githubusercontent.com/xiihaiqal/myscript/main/lista -o /dev/null
+wget -O /etc/adm-lite "https://raw.githubusercontent.com/xiihaiqal/myscript/main/IDIOMA_VPS/$id/idioma"
 valid_fun
