@@ -112,24 +112,29 @@ apt-get install gawk -y > /dev/null 2>&1
 wget -O trans https://raw.githubusercontent.com/xiihaiqal/myscript/main/Install/trans -o /dev/null 2>&1
 mv -f ./trans /bin/ && chmod 777 /bin/*
 echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠"
-echo -e "${cor[2]}SELECCIONAR IDIOMA\n${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠\n${cor[2]}[1]-PT-BR\n[2]-EN\n[3]-ES\n[4]-FR"
+echo -e "${cor[2]}SELECT LANGUAGE\n${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠\n${cor[2]}[1]-PT-BR\n[2]-EN\n[3]-ES\n[4]-FR"
 echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠"
-echo -ne " OPCION: "; read lang
+echo -ne " OPTIONS: "; read lang
 case $lang in
 1)
 id="pt"
+wget -O /etc/adm-lite "https://raw.githubusercontent.com/xiihaiqal/myscript/main/IDIOMA_VPS/pt/idioma"
 ;;
 2)
 id="en"
+wget -O /etc/adm-lite "https://raw.githubusercontent.com/xiihaiqal/myscript/main/IDIOMA_VPS/en/idioma"
 ;;
 3)
 id="es"
+wget -O /etc/adm-lite "https://raw.githubusercontent.com/xiihaiqal/myscript/main/IDIOMA_VPS/es/idioma"
 ;;
 4)
 id="fr"
+wget -O /etc/adm-lite "https://raw.githubusercontent.com/xiihaiqal/myscript/main/IDIOMA_VPS/fr/idioma"
 ;;
 *)
 id="es"
+wget -O /etc/adm-lite "https://raw.githubusercontent.com/xiihaiqal/myscript/main/IDIOMA_VPS/es/idioma"
 ;;
 esac
 echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠"
