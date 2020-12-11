@@ -135,7 +135,7 @@ id="es"
 esac
 echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠"
 echo -e ""
-echo -e "${cor[2]} $(source trans -b pt:en "")\n\033[1;37m  Script Modificado por: Carlos P. Briceño."
+echo -e "${cor[2]} $(source trans -b pt:en "")\n\033[1;37m  Script Modified by: KingKongVPN."
 echo -e ""
 echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠"
 echo -e "${cor[5]} $(source trans -b pt:en "INSTALADOR ADM-SCRIPTS") ®"
