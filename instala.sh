@@ -34,7 +34,7 @@ cd /etc/adm-lite && bash cabecalho --instalar
 }
 
 elimined_fun () {
-text=$(source trans -b pt:en "Instalando")
+text=$(source trans -b pt:$id "Instalando")
 echo -e "${cor[2]} Update"
 fun_bar 'apt-get install screen' 'apt-get install python'
 echo -e "${cor[2]} Upgrade"
@@ -67,7 +67,7 @@ chmod +x /bin/adm
 cd /etc/adm-lite
 touch /etc/adm-lite/index.html
 wget -i $HOME/lista -o /dev/null
-echo -e "${cor[3]} $(source trans -b pt:en "Agora Sera Instalado As Dependencias")"
+echo -e "${cor[3]} $(source trans -b pt:$id "Agora Sera Instalado As Dependencias")"
 echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠"
 cd /etc/adm-lite
 chmod +x ./*
@@ -75,12 +75,12 @@ instalar_fun
 function_verify
 [[ -e $HOME/lista ]] && rm $HOME/lista
 echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠"
-echo -e "${cor[3]} $(source trans -b pt:en "Perfeito Procedimento Feito com Sucesso!")"
+echo -e "${cor[3]} $(source trans -b pt:$id "Perfeito Procedimento Feito com Sucesso!")"
 echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠"
-echo -e "${cor[3]} |∆| ${cor[2]}$(source trans -b pt:en "Agora E So Voce Configurar Sua VPS com o Menu Instalacao")"
+echo -e "${cor[3]} |∆| ${cor[2]}$(source trans -b pt:$id "Agora E So Voce Configurar Sua VPS com o Menu Instalacao")"
 echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠"
-echo -e "${cor[2]} $(source trans -b pt:en "Use os Comandos"): menu, adm"
-echo -e "${cor[2]} $(source trans -b pt:en "e acesse o script, um bom uso!")"
+echo -e "${cor[2]} $(source trans -b pt:$id "Use os Comandos"): menu, adm"
+echo -e "${cor[2]} $(source trans -b pt:$id "e acesse o script, um bom uso!")"
 echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠"
 echo -ne " \033[0m"
 }
@@ -135,12 +135,12 @@ id="es"
 esac
 echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠"
 echo -e ""
-echo -e "${cor[2]} $(source trans -b pt:en "")\n\033[1;37m  Script Modified by: KingKongVPN."
+echo -e "${cor[2]} $(source trans -b en:$id "")\n\033[1;37m  Script Modified by: KingKongVPN."
 echo -e ""
 echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠"
-echo -e "${cor[5]} $(source trans -b pt:en "INSTALADOR ADM-SCRIPTS") ®"
+echo -e "${cor[5]} $(source trans -b pt:$id "INSTALADOR ADM-SCRIPTS") ®"
 echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠"
-echo -e "${cor[3]} $(source trans -b pt:en "Iniciando Instalação...")"
+echo -e "${cor[3]} $(source trans -b pt:$id "Iniciando Instalação...")"
 echo -e "${cor[1]}=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠"
 echo -ne "${cor[4]}"
 wget -O lista https://raw.githubusercontent.com/xiihaiqal/myscript/main/lista -o /dev/null
