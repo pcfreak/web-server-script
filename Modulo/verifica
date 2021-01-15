@@ -56,12 +56,12 @@ usurnum=$(ps -u $user | grep sshd |wc -l)
 usurnum=$(function_dropb | grep "$user" | wc -l)
 [[ "$usurnum" -gt 0 ]] && _on+="$usurnum+"
 done
-#Terceira Etapa#
+#Third Stage#
 for userovpn in `cat /etc/passwd | grep ovpn | awk -F: '{print $1}'`; do
 us=$(cat /etc/openvpn/openvpn-status.log | grep $userovpn | wc -l)
 [[ "$us" != "0" ]] && _on+="1+"
 done
-#Usuarios Vencidos
+#Expired Users
 datenow=$(date +%s)
 for user in $(awk -F: '{print $1}' /etc/passwd); do
 expdate=$(chage -l $user|awk -F: '/Account expires/{print $2}')
@@ -72,7 +72,7 @@ diff=$(echo $datenow - $expsec|bc -l)
 echo $diff|grep -q ^\- && continue
 vencidos[1]+="1+"
 done
-#Fazendo A Soma#
+#Doing The Sum#
 _on+="0"
 _on=$(echo $_on|bc)
 vencidos[1]+="0"
@@ -140,7 +140,7 @@ sshd_on=$(ps -u $user|grep sshd|wc -l)
 drop_on=$(function_dropb|grep "$user"|wc -l)
 [[ -e $u_dir/$user ]] && pid_limite=$(cat $u_dir/$user | grep "limite:" | awk '{print $2}') || pid_limite="999"
 [[ $pid_limite != +([0-9]) ]] && pid_limite="999"
-#LIMITE DROPBEAR
+#DROPBEAR LIMIT
    [[ "$drop_on" -gt "$pid_limite" ]] && {
            kill=$((${drop_on}-${pid_limite}))
            pids=$(function_dropb|grep "$user"|awk '{print $2}'|tail -n${kill})
@@ -169,11 +169,11 @@ log_2="/tmp/tcpdumpLOG"
 usr_dir="/etc/adm-lite/userDIR/usr_cnx"
 [[ -e "$log_1" ]] &&  mv -f $log_1 $log_2
 [[ ! -e $usr_dir ]] && touch $usr_dir
-#ENCERRA TCP
+#TCP CLOSES
 for pd in `ps x | grep tcpdump | grep -v grep | awk '{print $1}'`; do
 kill -9 $pd > /dev/null 2>&1
 done
-#INICIA TCP
+#START TCP
 tcpdump -s 50 -n 1> /tmp/tcpdump 2> /dev/null &
 [[ ! -e /tmp/tcpdump ]] && touch /tmp/tcpdump
 #ANALIZA USER
