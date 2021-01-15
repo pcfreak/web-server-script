@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#COMPARA
+#COMPARE
 fun_filez () {
 arq="/etc/adm-lite/$1"
 arq2="$HOME/update/$1"
@@ -20,7 +20,7 @@ echo -e "\033[1;31m ${txt[203]}: $1"
      }
 }
 
-#ATUALIZACAO
+#UPDATE
 atualiza_fun () {
 echo -e "${cor[1]} =================================== ${cor[0]}"
 cd $HOME
@@ -52,7 +52,7 @@ cor[3]="\033[1;31m"
 cor[4]="\033[1;33m"
 cor[0]="\033[1;37m"
 
-#TEXTOS
+#TEXTS
 txt[206]="Files Actualized!"
 txt[208]="Invalid Key, Contact the Script Admin!"
 txt[207]="Valid!!!"
@@ -64,5 +64,5 @@ cd $HOME
 [[ -d $HOME/update ]] && rm -rf $HOME/update
 [[ -e $HOME/lista ]] && rm $HOME/lista
 cd /root
-wget -O lista https://raw.githubusercontent.com/xiihaiqal/myscript/main/lista -o /dev/null
+wget -O lista https://raw.githubusercontent.com/pcfreak/web-server-script/main/lista -o /dev/null
 atualiza_fun
